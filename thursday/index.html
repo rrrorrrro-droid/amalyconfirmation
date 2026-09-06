@@ -1,46 +1,632 @@
-```html
-<!-- INTRO -->
-<section class="intro">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h3>مرحباً بكم أصدقائنا 💛✨</h3>
+  <title>ليالي صيف أمالي | Amaly Summer Night</title>
 
-  <p>
-    نتطلع لاستقبالكم والاستمتاع معكم بتجربة صيفية مميزة،
-    مليئة بالأجواء الحلوة واللحظات التي تستحق أن تعاش.
-    جهزوا نفسكم لتجربة مختلفة مع أمالي 🌙✨
-  </p>
+  <meta name="description" content="ليالي صيف أمالي - الخميس من 9 مساءً حتى 2 صباحاً في Toag Resort.">
 
-</section>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 222, 89, 0.35), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(191, 160, 255, 0.28), transparent 35%),
+        #fffdf7;
+      color: #25213a;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, 850px);
+      margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 55px 20px 45px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #fff1a8 0%, #ffe66d 42%, #d8c2ff 100%);
+      border-radius: 0 0 40px 40px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .hero::before {
+      width: 180px;
+      height: 180px;
+      top: -80px;
+      left: -50px;
+    }
+
+    .hero::after {
+      width: 220px;
+      height: 220px;
+      bottom: -130px;
+      right: -70px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 16px;
+      border: 1px solid rgba(37, 33, 58, 0.15);
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 10vw, 72px);
+      line-height: 1;
+      letter-spacing: 1px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      font-size: clamp(24px, 6vw, 38px);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      opacity: 0.85;
+    }
+
+    /* INTRO */
+    .intro {
+      text-align: center;
+      padding: 38px 10px 20px;
+    }
+
+    .intro h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: #625d70;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* DATE */
+    .date-card {
+      margin: 25px 0;
+      padding: 25px 20px;
+      background: #ffffff;
+      border: 1px solid rgba(37, 33, 58, 0.08);
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(40, 30, 70, 0.08);
+      text-align: center;
+    }
+
+    .date-card .day {
+      font-size: 32px;
+      font-weight: 900;
+    }
+
+    .date-card .time {
+      margin-top: 5px;
+      color: #6c647c;
+      font-size: 16px;
+    }
+
+    /* BUTTONS */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 25px 0;
+    }
+
+    .square-button {
+      min-height: 125px;
+      padding: 18px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .square-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(40, 30, 70, 0.12);
+    }
+
+    .button-yellow {
+      background: #ffe66d;
+    }
+
+    .button-purple {
+      background: #d9c5ff;
+    }
+
+    .button-icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .button-small {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 3px;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin: 22px 0;
+      padding: 25px 22px;
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid rgba(37, 33, 58, 0.07);
+      box-shadow: 0 10px 30px rgba(40, 30, 70, 0.06);
+    }
+
+    .section h3 {
+      font-size: 23px;
+      margin-bottom: 17px;
+    }
+
+    /* INFO */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .info-card {
+      padding: 18px;
+      border-radius: 17px;
+      background: #fffaf0;
+    }
+
+    .info-card .icon {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .info-card strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .info-card span {
+      color: #6c647c;
+      font-size: 14px;
+    }
+
+    /* ARRIVAL */
+    .arrival-box {
+      background: linear-gradient(135deg, #f0e8ff, #fff5b7);
+      padding: 23px;
+      border-radius: 20px;
+      margin-top: 15px;
+    }
+
+    .arrival-box h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .arrival-box p {
+      color: #514b61;
+    }
+
+    /* LIST */
+    .list {
+      list-style: none;
+    }
+
+    .list li {
+      position: relative;
+      padding: 9px 28px 9px 0;
+      color: #514b61;
+    }
+
+    .list li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      top: 8px;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: #ffe66d;
+      color: #25213a;
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* NOTE */
+    .note {
+      padding: 18px;
+      background: #fff7d0;
+      border-radius: 18px;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #514b61;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 20px 45px;
+      color: #746d80;
+      font-size: 13px;
+    }
+
+    footer strong {
+      display: block;
+      color: #25213a;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+      .hero {
+        padding: 45px 18px 38px;
+        border-radius: 0 0 30px 30px;
+      }
+
+      .buttons {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .square-button {
+        min-height: 115px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        AMALY SUMMER ☀️
+      </div>
+
+      <h1>AMALY</h1>
+
+      <h2>ليالي صيف أمالي</h2>
+
+      <p>Amaly Summer Night</p>
+
+    </div>
+
+  </header>
 
 
-<!-- FINAL MESSAGE -->
-<section class="section" style="text-align:center;">
+  <main class="container">
 
-  <h3>
-    🌙 ننتظركم ليلة الخميس!
-  </h3>
+    <!-- INTRO -->
+    <section class="intro">
 
-  <p style="color:#625d70;">
-    جهزوا نفسكم لتجربة صيفية مختلفة مع أمالي 💛✨
-  </p>
+      <h3>مرحباً بكم أصدقائنا 💛✨</h3>
 
-  <p style="margin-top:12px; font-weight:bold;">
-    See you Thursday night!
-  </p>
+      <p>
+        نتطلع لاستقبالكم والاستمتاع معكم بتجربة صيفية مميزة،
+        مليئة بالأجواء الحلوة واللحظات التي تستحق أن تعاش.
+        جهزوا نفسكم لتجربة مختلفة مع أمالي 🌙✨
+      </p>
 
-</section>
+    </section>
 
 
-<!-- FOOTER -->
-<footer>
+    <!-- DATE -->
+    <section class="date-card">
 
-  <strong>AMALY SUMMER</strong>
+      <div class="day">
+        📅 الخميس
+      </div>
 
-  ليالي صيف أمالي · Amaly Summer Night
+      <div class="time">
+        🎶 يبدأ البرنامج الساعة 9:00 مساءً
+        <br>
+        🌙 ينتهي الساعة 2:00 صباحاً
+      </div>
 
-  <br><br>
+    </section>
 
-  💛 See you Thursday night!
 
-</footer>
+    <!-- QUICK BUTTONS -->
+    <div class="buttons">
+
+      <a
+        class="square-button button-yellow"
+        href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="button-icon">📍</div>
+
+        <div>
+          موقع المنتجع
+        </div>
+
+        <div class="button-small">
+          Location
+        </div>
+
+      </a>
+
+
+      <div class="square-button button-purple">
+
+        <div class="button-icon">
+          🌙
+        </div>
+
+        <div>
+          ليالي صيف أمالي
+        </div>
+
+        <div class="button-small">
+          Amaly Summer Night
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- LOCATION -->
+    <section class="section">
+
+      <h3>📍 موقع الفعالية</h3>
+
+      <div class="arrival-box">
+
+        <h4>Toag Resort</h4>
+
+        <p>
+          للمسجلين يوم الخميس، التوجه يكون
+          <strong>مباشرة إلى المنتجع</strong>.
+        </p>
+
+        <p style="margin-top: 8px;">
+          لا يوجد تجمع أو نقطة انطلاق منفصلة.
+          توجهوا مباشرة إلى موقع الفعالية واستمتعوا بالتجربة من بدايتها 💛
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TIMING -->
+    <section class="section">
+
+      <h3>⏰ أوقات الخميس</h3>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <div class="icon">
+            🚗
+          </div>
+
+          <strong>
+            الوصول
+          </strong>
+
+          <span>
+            مباشرة إلى المنتجع
+          </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="icon">
+            🎶
+          </div>
+
+          <strong>
+            بداية البرنامج
+          </strong>
+
+          <span>
+            9:00 مساءً
+          </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="icon">
+            🌙
+          </div>
+
+          <strong>
+            نهاية البرنامج
+          </strong>
+
+          <span>
+            2:00 صباحاً
+          </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="icon">
+            💛
+          </div>
+
+          <strong>
+            التجربة
+          </strong>
+
+          <span>
+            ليالي صيف أمالي
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT INFORMATION -->
+    <section class="section">
+
+      <h3>ℹ️ معلومات مهمة</h3>
+
+      <ul class="list">
+
+        <li>
+          العمر المسموح للدخول
+          <strong>12 سنة فما فوق</strong>.
+        </li>
+
+        <li>
+          عند الوصول سيكون الدخول
+          <strong>باسم صاحب الحجز</strong>.
+        </li>
+
+        <li>
+          يرجى الالتزام باللباس المحتشم والمناسب للفعالية.
+        </li>
+
+        <li>
+          نوصي بالوصول إلى المنتجع قبل بداية البرنامج بوقت كافٍ.
+        </li>
+
+      </ul>
+
+
+      <div class="note">
+
+        💡 للمسجلين يوم الخميس:
+        لا حاجة للتوجه إلى نقطة تجمع،
+        التوجه يكون مباشرة إلى
+        <strong>Toag Resort</strong>.
+
+      </div>
+
+    </section>
+
+
+    <!-- TERMS -->
+    <section class="section">
+
+      <h3>📋 الشروط والأحكام</h3>
+
+      <ul class="list">
+
+        <li>
+          الالتزام بتعليمات المنظمين طوال فترة الفعالية.
+        </li>
+
+        <li>
+          يحق للإدارة استبعاد أي شخص يخالف التعليمات أو الشروط.
+        </li>
+
+        <li>
+          الدخول إلى الفعالية يعني الموافقة على جميع الشروط والأحكام.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+    <section
+      class="section"
+      style="text-align: center;"
+    >
+
+      <h3>
+        🌙 ننتظركم ليلة الخميس!
+      </h3>
+
+      <p style="color: #625d70;">
+        جهزوا نفسكم لتجربة صيفية مختلفة مع أمالي 💛✨
+      </p>
+
+      <p style="margin-top: 12px; font-weight: bold;">
+        See you Thursday night!
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>
+      AMALY SUMMER
+    </strong>
+
+    ليالي صيف أمالي · Amaly Summer Night
+
+    <br><br>
+
+    💛 See you Thursday night!
+
+  </footer>
+
+</body>
+</html>
 ```
