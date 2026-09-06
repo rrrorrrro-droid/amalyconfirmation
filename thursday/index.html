@@ -1,609 +1,1336 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ليالي صيف أمالي | Amaly Summer Night</title>
+<title>ليالي صيف أمالي | Amaly Summer Night</title>
 
-  <meta name="description" content="ليالي صيف أمالي - الخميس من 9 مساءً حتى 2 صباحاً في Toag Resort.">
+<meta name="description" content="ليالي صيف أمالي - الخميس من 9 مساءً حتى 2 صباحاً في Toag Resort.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Jost:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#faf9f6;
+    color:#151515;
+    font-family:'Tajawal', sans-serif;
+    line-height:1.7;
+}
+
+body.lang-en{
+    font-family:'Jost', sans-serif;
+}
+
+.wrap{
+    width:100%;
+    max-width:620px;
+    margin:0 auto;
+    padding:24px 20px 60px;
+}
+
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+.switcher{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:0;
+    margin-bottom:26px;
+}
+
+.switcher button{
+    min-width:52px;
+    height:38px;
+    padding:0 12px;
+    border:1px solid #dedbd4;
+    background:#ffffff;
+    color:#777;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:13px;
+    transition:0.2s ease;
+}
+
+.switcher button:first-child{
+    border-radius:0 5px 5px 0;
+}
+
+.switcher button:last-child{
+    border-radius:5px 0 0 5px;
+}
+
+.switcher span{
+    display:none;
+}
+
+.switcher button.active{
+    background:#d8bd3f;
+    border-color:#d8bd3f;
+    color:#151515;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:#fff4b8;
+    padding:38px 24px 34px;
+    text-align:center;
+    margin-bottom:22px;
+    border:1px solid #eadb76;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#ffe783;
+    top:-75px;
+    right:-50px;
+    opacity:.8;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#f7e9a1;
+    bottom:-65px;
+    left:-40px;
+    opacity:.9;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    color:#6d622b;
+    margin-bottom:8px;
+}
+
+.hero h1{
+    margin:0;
+    font-size:30px;
+    line-height:1.25;
+    font-weight:800;
+}
+
+.hero h1 span{
+    display:block;
+    font-size:17px;
+    font-weight:500;
+    margin-top:5px;
+    color:#6b6138;
+}
+
+.daytag{
+    margin:14px 0 0;
+    font-size:14px;
+    color:#675d34;
+}
+
+.lede{
+    max-width:440px;
+    margin:20px auto 0;
+    font-size:15px;
+}
+
+
+/* =========================
+   QUICK BUTTONS
+========================= */
+
+.quick-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:28px;
+}
+
+.quick-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:58px;
+    padding:10px;
+    background:#d8bd3f;
+    color:#151515;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    border:1px solid #d8bd3f;
+    transition:transform .2s ease, background .2s ease;
+}
+
+.quick-btn:hover{
+    transform:translateY(-2px);
+    background:#cdb232;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title{
+    text-align:center;
+    margin:0 0 16px;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:20px;
+    font-weight:800;
+}
+
+.section-title p{
+    margin:3px 0 0;
+    font-size:13px;
+    color:#777;
+}
+
+
+/* =========================
+   INFO CARDS
+========================= */
+
+.card{
+    background:#ffffff;
+    border:1px solid #e8e5df;
+    padding:22px 20px;
+    margin-bottom:12px;
+}
+
+.card-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:17px;
+}
+
+.card-icon{
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff1a8;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.card-header h3{
+    margin:0;
+    font-size:16px;
+    font-weight:800;
+}
+
+.card-header p{
+    margin:0;
+    color:#777;
+    font-size:12px;
+}
+
+
+/* =========================
+   SCHEDULE
+========================= */
+
+.schedule{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.schedule li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 0;
+    border-bottom:1px solid #eeeeeb;
+    font-size:14px;
+}
+
+.schedule li:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.schedule li:first-child{
+    padding-top:0;
+}
+
+.schedule .time{
+    color:#555;
+    font-weight:600;
+    direction:ltr;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-name{
+    text-align:center;
+    margin:17px 0 12px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.location-name span{
+    display:block;
+    color:#777;
+    font-size:12px;
+    font-weight:400;
+    margin-top:2px;
+}
+
+.map-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:48px;
+    background:#ffffff;
+    border:1px solid #151515;
+    color:#151515;
+    text-decoration:none;
+    font-size:13.5px;
+    font-weight:600;
+    transition:.2s ease;
+}
+
+.map-btn:hover{
+    background:#151515;
+    color:#fff;
+}
+
+
+/* =========================
+   EXPECTATIONS
+========================= */
+
+.expectations{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.expect-card{
+    background:#ffffff;
+    border:1px solid #e8e5df;
+    padding:18px 12px;
+    text-align:center;
+}
+
+.expect-card .emoji{
+    display:block;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.expect-card strong{
+    display:block;
+    font-size:13px;
+}
+
+.expect-card small{
+    display:block;
+    color:#888;
+    font-size:11px;
+    margin-top:2px;
+}
+
+
+/* =========================
+   IMPORTANT INFO
+========================= */
+
+.plain{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.plain li{
+    position:relative;
+    padding-inline-start:18px;
+    margin-bottom:11px;
+    font-size:13.5px;
+}
+
+.plain li:last-child{
+    margin-bottom:0;
+}
+
+.plain li::before{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#d8bd3f;
+    inset-inline-start:2px;
+    top:10px;
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.note{
+    text-align:center;
+    margin:26px 0 0;
+    padding:20px;
+    background:#fff4b8;
+    font-size:14px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider{
+    height:1px;
+    background:#dedbd4;
+    margin:30px 0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding-top:20px;
+}
+
+footer strong{
+    display:block;
+    font-size:14px;
+}
+
+footer p{
+    margin:3px 0 0;
+    color:#999;
+    font-size:11px;
+}
+
+
+/* =========================
+   ENGLISH DIRECTION
+========================= */
+
+body.lang-en .schedule .time{
+    direction:ltr;
+}
+
+body.lang-en .switcher{
+    justify-content:flex-start;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:420px){
+
+    .wrap{
+        padding:18px 15px 50px;
     }
 
-    body {
-      font-family: Arial, Tahoma, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255, 222, 89, 0.35), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(191, 160, 255, 0.28), transparent 35%),
-        #fffdf7;
-      color: #25213a;
-      line-height: 1.7;
+    .hero{
+        padding:32px 18px 30px;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .hero h1{
+        font-size:27px;
     }
 
-    .container {
-      width: min(92%, 850px);
-      margin: auto;
+    .hero h1 span{
+        font-size:16px;
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 55px 20px 45px;
-      text-align: center;
-      background:
-        linear-gradient(135deg, #fff1a8 0%, #ffe66d 42%, #d8c2ff 100%);
-      border-radius: 0 0 40px 40px;
+    .lede{
+        font-size:14px;
     }
 
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.35);
+    .quick-actions{
+        gap:8px;
     }
 
-    .hero::before {
-      width: 180px;
-      height: 180px;
-      top: -80px;
-      left: -50px;
+    .quick-btn{
+        min-height:54px;
+        font-size:13px;
     }
 
-    .hero::after {
-      width: 220px;
-      height: 220px;
-      bottom: -130px;
-      right: -70px;
+    .card{
+        padding:20px 16px;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
+}
 
-    .eyebrow {
-      display: inline-block;
-      padding: 7px 16px;
-      border: 1px solid rgba(37, 33, 58, 0.15);
-      background: rgba(255, 255, 255, 0.45);
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 10vw, 72px);
-      line-height: 1;
-      letter-spacing: 1px;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    .hero h2 {
-      font-size: clamp(24px, 6vw, 38px);
-      margin-bottom: 8px;
-    }
-
-    .hero p {
-      font-size: 16px;
-      opacity: 0.85;
-    }
-
-    .intro {
-      text-align: center;
-      padding: 38px 10px 20px;
-    }
-
-    .intro h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      color: #625d70;
-      max-width: 650px;
-      margin: auto;
-    }
-
-    .date-card {
-      margin: 25px 0;
-      padding: 25px 20px;
-      background: #ffffff;
-      border: 1px solid rgba(37, 33, 58, 0.08);
-      border-radius: 24px;
-      box-shadow: 0 12px 35px rgba(40, 30, 70, 0.08);
-      text-align: center;
-    }
-
-    .date-card .day {
-      font-size: 32px;
-      font-weight: 900;
-    }
-
-    .date-card .time {
-      margin-top: 5px;
-      color: #6c647c;
-      font-size: 16px;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin: 25px 0;
-    }
-
-    .square-button {
-      min-height: 125px;
-      padding: 18px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .square-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(40, 30, 70, 0.12);
-    }
-
-    .button-yellow {
-      background: #ffe66d;
-    }
-
-    .button-purple {
-      background: #d9c5ff;
-    }
-
-    .button-icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .button-small {
-      font-size: 12px;
-      opacity: 0.7;
-      margin-top: 3px;
-    }
-
-    .section {
-      margin: 22px 0;
-      padding: 25px 22px;
-      background: #ffffff;
-      border-radius: 24px;
-      border: 1px solid rgba(37, 33, 58, 0.07);
-      box-shadow: 0 10px 30px rgba(40, 30, 70, 0.06);
-    }
-
-    .section h3 {
-      font-size: 23px;
-      margin-bottom: 17px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .info-card {
-      padding: 18px;
-      border-radius: 17px;
-      background: #fffaf0;
-    }
-
-    .info-card .icon {
-      font-size: 25px;
-      margin-bottom: 5px;
-    }
-
-    .info-card strong {
-      display: block;
-      font-size: 16px;
-    }
-
-    .info-card span {
-      color: #6c647c;
-      font-size: 14px;
-    }
-
-    .arrival-box {
-      background: linear-gradient(135deg, #f0e8ff, #fff5b7);
-      padding: 23px;
-      border-radius: 20px;
-      margin-top: 15px;
-    }
-
-    .arrival-box h4 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .arrival-box p {
-      color: #514b61;
-    }
-
-    .list {
-      list-style: none;
-    }
-
-    .list li {
-      position: relative;
-      padding: 9px 28px 9px 0;
-      color: #514b61;
-    }
-
-    .list li::before {
-      content: "✓";
-      position: absolute;
-      right: 0;
-      top: 8px;
-      width: 21px;
-      height: 21px;
-      border-radius: 50%;
-      background: #ffe66d;
-      color: #25213a;
-      font-size: 12px;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .note {
-      padding: 18px;
-      background: #fff7d0;
-      border-radius: 18px;
-      margin-top: 15px;
-      font-size: 14px;
-      color: #514b61;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 20px 45px;
-      color: #746d80;
-      font-size: 13px;
-    }
-
-    footer strong {
-      display: block;
-      color: #25213a;
-      font-size: 17px;
-      margin-bottom: 5px;
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        padding: 45px 18px 38px;
-        border-radius: 0 0 30px 30px;
-      }
-
-      .buttons {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .square-button {
-        min-height: 115px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 22px 18px;
-      }
-    }
-  </style>
+</style>
 </head>
 
-<body>
 
-  <header class="hero">
-    <div class="hero-content">
+<body class="lang-ar">
 
-      <div class="eyebrow">
-        AMALY SUMMER ☀️
-      </div>
-
-      <h1>AMALY</h1>
-
-      <h2>ليالي صيف أمالي</h2>
-
-      <p>Amaly Summer Night</p>
-
-    </div>
-  </header>
+<div class="wrap">
 
 
-  <main class="container">
+<!-- =========================
+     LANGUAGE
+========================= -->
 
-    <section class="intro">
+<div class="switcher">
 
-      <h3>مرحباً بكم أصدقائنا 💛✨</h3>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
 
-      <p>
-        نتطلع لاستقبالكم والاستمتاع معكم بتجربة صيفية مميزة،
-        مليئة بالأجواء الحلوة واللحظات التي تستحق أن تعاش.
-        جهزوا نفسكم لتجربة مختلفة مع أمالي 🌙✨
-      </p>
+    <button id="btn-ar"
+            class="active"
+            onclick="setLang('ar')">
+        عربي
+    </button>
 
-    </section>
-
-
-    <section class="date-card">
-
-      <div class="day">
-        📅 الخميس
-      </div>
-
-      <div class="time">
-        🎶 يبدأ البرنامج الساعة 9:00 مساءً
-        <br>
-        🌙 ينتهي الساعة 2:00 صباحاً
-      </div>
-
-    </section>
+</div>
 
 
-    <div class="buttons">
 
-      <a
-        class="square-button button-yellow"
-        href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+<!-- =========================
+     ARABIC VERSION
+========================= -->
 
-        <div class="button-icon">
-          📍
+<div class="block" data-lang="ar">
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                AMALY SUMMER
+            </div>
+
+            <h1>
+                ليالي صيف أمالي
+                <span>Amaly Summer Night</span>
+            </h1>
+
+            <p class="daytag">
+                ليلة الخميس
+            </p>
+
+            <p class="lede">
+                جاهزين لليلة صيفية مختلفة مع أمالي؟
+                🌙☀️
+                <br>
+                أجواء حلوة، تجارب ممتعة ولحظات تستحق أن تعاش!
+            </p>
+
         </div>
-
-        <div>
-          موقع المنتجع
-        </div>
-
-        <div class="button-small">
-          Location
-        </div>
-
-      </a>
-
-
-      <div class="square-button button-purple">
-
-        <div class="button-icon">
-          🌙
-        </div>
-
-        <div>
-          ليالي صيف أمالي
-        </div>
-
-        <div class="button-small">
-          Amaly Summer Night
-        </div>
-
-      </div>
 
     </div>
 
 
-    <section class="section">
 
-      <h3>📍 موقع الفعالية</h3>
+    <!-- QUICK ACTIONS -->
 
-      <div class="arrival-box">
+    <div class="quick-actions">
 
-        <h4>Toag Resort</h4>
+        <a class="quick-btn"
+           href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+           target="_blank"
+           rel="noopener">
+            📍 موقع المنتجع
+        </a>
 
-        <p>
-          للمسجلين يوم الخميس، التوجه يكون
-          <strong>مباشرة إلى المنتجع</strong>.
-        </p>
+        <a class="quick-btn"
+           href="#schedule"
+           rel="noopener">
+            🌙 تفاصيل الخميس
+        </a>
 
-        <p style="margin-top: 8px;">
-          لا يوجد تجمع أو نقطة انطلاق منفصلة.
-          توجهوا مباشرة إلى موقع الفعالية واستمتعوا بالتجربة من بدايتها 💛
-        </p>
-
-      </div>
-
-    </section>
+    </div>
 
 
-    <section class="section">
 
-      <h3>⏰ أوقات الخميس</h3>
+    <!-- THURSDAY SCHEDULE -->
 
-      <div class="info-grid">
+    <section id="schedule">
 
-        <div class="info-card">
+        <div class="section-title">
 
-          <div class="icon">
-            🚗
-          </div>
+            <h2>🌙 تفاصيل ليلة الخميس</h2>
 
-          <strong>
-            الوصول
-          </strong>
-
-          <span>
-            مباشرة إلى المنتجع
-          </span>
+            <p>من الوصول وحتى نهاية التجربة</p>
 
         </div>
 
 
-        <div class="info-card">
+        <div class="card">
 
-          <div class="icon">
-            🎶
-          </div>
+            <div class="card-header">
 
-          <strong>
-            بداية البرنامج
-          </strong>
+                <div class="card-icon">
+                    🌙
+                </div>
 
-          <span>
-            9:00 مساءً
-          </span>
+                <div>
+                    <h3>مواعيد الفعالية</h3>
+                    <p>الخميس</p>
+                </div>
+
+            </div>
+
+
+            <ul class="schedule">
+
+                <li>
+                    <span>الوصول إلى المنتجع</span>
+                    <span class="time">Before 9:00 PM</span>
+                </li>
+
+                <li>
+                    <span>بداية البرنامج</span>
+                    <span class="time">9:00 PM</span>
+                </li>
+
+                <li>
+                    <span>نهاية البرنامج</span>
+                    <span class="time">2:00 AM</span>
+                </li>
+
+            </ul>
+
+
+            <div class="location-name">
+                Toag Resort
+                <span>موقع الفعالية</span>
+            </div>
+
+
+            <a class="map-btn"
+               href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+               target="_blank"
+               rel="noopener">
+                📍 فتح موقع المنتجع
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ARRIVAL -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>🚗 الوصول إلى الفعالية</h2>
+
+            <p>للمسجلين يوم الخميس</p>
 
         </div>
 
 
-        <div class="info-card">
+        <div class="card">
 
-          <div class="icon">
-            🌙
-          </div>
+            <div class="card-header">
 
-          <strong>
-            نهاية البرنامج
-          </strong>
+                <div class="card-icon">
+                    🚗
+                </div>
 
-          <span>
-            2:00 صباحاً
-          </span>
+                <div>
+                    <h3>التوجه مباشرة إلى المنتجع</h3>
+                    <p>لا يوجد تجمع أو نقطة انطلاق</p>
+                </div>
+
+            </div>
+
+
+            <ul class="schedule">
+
+                <li>
+                    <span>طريقة الوصول</span>
+                    <span class="time">Direct</span>
+                </li>
+
+                <li>
+                    <span>نقطة التجمع</span>
+                    <span class="time">None</span>
+                </li>
+
+                <li>
+                    <span>الموقع</span>
+                    <span class="time">Toag Resort</span>
+                </li>
+
+            </ul>
+
+
+            <div class="location-name">
+                Toag Resort
+                <span>التوجه مباشرة إلى المنتجع</span>
+            </div>
+
+
+            <a class="map-btn"
+               href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+               target="_blank"
+               rel="noopener">
+                📍 فتح موقع المنتجع
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WHAT TO EXPECT -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>✨ وش ننتظركم فيه؟</h2>
+
+            <p>
+                ليلة مليانة أجواء صيفية وتجارب ممتعة
+            </p>
 
         </div>
 
 
-        <div class="info-card">
+        <div class="expectations">
 
-          <div class="icon">
-            💛
-          </div>
+            <div class="expect-card">
 
-          <strong>
-            التجربة
-          </strong>
+                <span class="emoji">☀️</span>
 
-          <span>
-            ليالي صيف أمالي
-          </span>
+                <strong>أجواء صيفية</strong>
+
+                <small>Summer Vibes</small>
+
+            </div>
+
+
+            <div class="expect-card">
+
+                <span class="emoji">🎶</span>
+
+                <strong>أجواء ممتعة</strong>
+
+                <small>Good Energy</small>
+
+            </div>
+
+
+            <div class="expect-card">
+
+                <span class="emoji">✨</span>
+
+                <strong>تجارب وفعاليات</strong>
+
+                <small>Experiences</small>
+
+            </div>
+
+
+            <div class="expect-card">
+
+                <span class="emoji">📸</span>
+
+                <strong>لحظات للتصوير</strong>
+
+                <small>Photo Moments</small>
+
+            </div>
 
         </div>
 
-      </div>
+    </section>
+
+
+
+    <div class="divider"></div>
+
+
+
+    <!-- IMPORTANT -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>معلومات مهمة</h2>
+
+            <p>قبل وصولكم، نحتاج منكم معرفة التالي</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <ul class="plain">
+
+                <li>
+                    العمر المسموح للدخول 12 سنة فما فوق.
+                </li>
+
+                <li>
+                    عند الوصول سيكون الدخول باسم صاحب الحجز.
+                </li>
+
+                <li>
+                    لا يوجد تجمع أو نقطة انطلاق للباص، والتوجه يكون مباشرة إلى المنتجع.
+                </li>
+
+                <li>
+                    يرجى الالتزام باللباس المحتشم والمناسب للفعالية.
+                </li>
+
+                <li>
+                    نوصي بالوصول إلى المنتجع قبل بداية البرنامج بوقت كافٍ.
+                </li>
+
+            </ul>
+
+        </div>
 
     </section>
 
 
-    <section class="section">
 
-      <h3>ℹ️ معلومات مهمة</h3>
+    <!-- TERMS -->
 
-      <ul class="list">
+    <section>
 
-        <li>
-          العمر المسموح للدخول
-          <strong>12 سنة فما فوق</strong>.
-        </li>
+        <div class="section-title">
 
-        <li>
-          عند الوصول سيكون الدخول
-          <strong>باسم صاحب الحجز</strong>.
-        </li>
+            <h2>الشروط والأحكام</h2>
 
-        <li>
-          يرجى الالتزام باللباس المحتشم والمناسب للفعالية.
-        </li>
-
-        <li>
-          نوصي بالوصول إلى المنتجع قبل بداية البرنامج بوقت كافٍ.
-        </li>
-
-      </ul>
+        </div>
 
 
-      <div class="note">
+        <div class="card">
 
-        💡 للمسجلين يوم الخميس:
-        لا حاجة للتوجه إلى نقطة تجمع،
-        التوجه يكون مباشرة إلى
-        <strong>Toag Resort</strong>.
+            <ul class="plain">
 
-      </div>
+                <li>
+                    الالتزام بتعليمات المنظمين طوال فترة الفعالية.
+                </li>
+
+                <li>
+                    يحق للإدارة استبعاد أي شخص يخالف التعليمات أو الشروط.
+                </li>
+
+                <li>
+                    الدخول إلى الفعالية يعني الموافقة على الشروط والأحكام.
+                </li>
+
+            </ul>
+
+        </div>
 
     </section>
 
 
-    <section class="section">
 
-      <h3>📋 الشروط والأحكام</h3>
+    <p class="note">
+        💛 عندكم سؤال؟
+        لا تترددوا في التواصل معنا في أي وقت.
+    </p>
 
-      <ul class="list">
 
-        <li>
-          الالتزام بتعليمات المنظمين طوال فترة الفعالية.
-        </li>
+</div>
 
-        <li>
-          يحق للإدارة استبعاد أي شخص يخالف التعليمات أو الشروط.
-        </li>
 
-        <li>
-          الدخول إلى الفعالية يعني الموافقة على جميع الشروط والأحكام.
-        </li>
 
-      </ul>
+
+
+<!-- =========================
+     ENGLISH VERSION
+========================= -->
+
+<div class="block" data-lang="en" style="display:none">
+
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                AMALY SUMMER
+            </div>
+
+            <h1>
+                Amaly Summer Night
+                <span>ليالي صيف أمالي</span>
+            </h1>
+
+            <p class="daytag">
+                Thursday Night
+            </p>
+
+            <p class="lede">
+                Ready for a different kind of summer night with Amaly?
+                🌙☀️
+                <br>
+                Good vibes, fun experiences and moments worth remembering!
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUICK ACTIONS -->
+
+    <div class="quick-actions">
+
+        <a class="quick-btn"
+           href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+           target="_blank"
+           rel="noopener">
+            📍 Resort Location
+        </a>
+
+        <a class="quick-btn"
+           href="#schedule-en"
+           rel="noopener">
+            🌙 Thursday Details
+        </a>
+
+    </div>
+
+
+
+    <!-- THURSDAY SCHEDULE -->
+
+    <section id="schedule-en">
+
+        <div class="section-title">
+
+            <h2>🌙 Thursday Night Details</h2>
+
+            <p>From arrival to the end of the experience</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <div class="card-icon">
+                    🌙
+                </div>
+
+                <div>
+
+                    <h3>Event Schedule</h3>
+
+                    <p>Thursday</p>
+
+                </div>
+
+            </div>
+
+
+            <ul class="schedule">
+
+                <li>
+                    <span>Arrival at the resort</span>
+                    <span class="time">Before 9:00 PM</span>
+                </li>
+
+                <li>
+                    <span>Program starts</span>
+                    <span class="time">9:00 PM</span>
+                </li>
+
+                <li>
+                    <span>Program ends</span>
+                    <span class="time">2:00 AM</span>
+                </li>
+
+            </ul>
+
+
+            <div class="location-name">
+
+                Toag Resort
+
+                <span>
+                    Event Location
+                </span>
+
+            </div>
+
+
+            <a class="map-btn"
+               href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+               target="_blank"
+               rel="noopener">
+
+                📍 Open Resort Location
+
+            </a>
+
+        </div>
 
     </section>
 
 
-    <section
-      class="section"
-      style="text-align: center;"
-    >
 
-      <h3>
-        🌙 ننتظركم ليلة الخميس!
-      </h3>
+    <!-- ARRIVAL -->
 
-      <p style="color: #625d70;">
-        جهزوا نفسكم لتجربة صيفية مختلفة مع أمالي 💛✨
-      </p>
+    <section>
 
-      <p style="margin-top: 12px; font-weight: bold;">
-        See you Thursday night!
-      </p>
+        <div class="section-title">
+
+            <h2>🚗 Getting to the Event</h2>
+
+            <p>For Thursday guests</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <div class="card-icon">
+                    🚗
+                </div>
+
+                <div>
+
+                    <h3>Head Directly to the Resort</h3>
+
+                    <p>No meeting point or bus departure</p>
+
+                </div>
+
+            </div>
+
+
+            <ul class="schedule">
+
+                <li>
+                    <span>Arrival</span>
+                    <span class="time">Direct</span>
+                </li>
+
+                <li>
+                    <span>Meeting point</span>
+                    <span class="time">None</span>
+                </li>
+
+                <li>
+                    <span>Location</span>
+                    <span class="time">Toag Resort</span>
+                </li>
+
+            </ul>
+
+
+            <div class="location-name">
+
+                Toag Resort
+
+                <span>
+                    Head directly to the resort
+                </span>
+
+            </div>
+
+
+            <a class="map-btn"
+               href="https://www.google.com/maps/place/Toag+Resort/@24.3417713,46.3463633,17z/"
+               target="_blank"
+               rel="noopener">
+
+                📍 Open Resort Location
+
+            </a>
+
+        </div>
 
     </section>
 
-  </main>
 
 
-  <footer>
+    <!-- WHAT TO EXPECT -->
 
-    <strong>
-      AMALY SUMMER
-    </strong>
+    <section>
 
-    ليالي صيف أمالي · Amaly Summer Night
+        <div class="section-title">
 
-    <br><br>
+            <h2>✨ What to Expect</h2>
 
-    💛 See you Thursday night!
+            <p>
+                A night full of summer vibes and fun experiences
+            </p>
 
-  </footer>
+        </div>
+
+
+        <div class="expectations">
+
+            <div class="expect-card">
+
+                <span class="emoji">☀️</span>
+
+                <strong>Summer Vibes</strong>
+
+                <small>Good Energy</small>
+
+            </div>
+
+
+            <div class="expect-card">
+
+                <span class="emoji">🎶</span>
+
+                <strong>Good Vibes</strong>
+
+                <small>Enjoy the Night</small>
+
+            </div>
+
+
+            <div class="expect-card">
+
+                <span class="emoji">✨</span>
+
+                <strong>Experiences</strong>
+
+                <small>Fun Activities</small>
+
+            </div>
+
+
+            <div class="expect-card">
+
+                <span class="emoji">📸</span>
+
+                <strong>Photo Moments</strong>
+
+                <small>Make Memories</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="divider"></div>
+
+
+
+    <!-- IMPORTANT INFO -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Important Information</h2>
+
+            <p>
+                A few things to know before you arrive
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <ul class="plain">
+
+                <li>
+                    Entry is allowed for guests aged 12 and above.
+                </li>
+
+                <li>
+                    Entry will be under the name of the booking holder.
+                </li>
+
+                <li>
+                    There is no meeting point or bus departure. Please head directly to the resort.
+                </li>
+
+                <li>
+                    Please wear modest and appropriate attire for the event.
+                </li>
+
+                <li>
+                    We recommend arriving at the resort before the program starts.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TERMS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Terms & Conditions</h2>
+
+        </div>
+
+
+        <div class="card">
+
+            <ul class="plain">
+
+                <li>
+                    Please follow all instructions given by the organizers.
+                </li>
+
+                <li>
+                    Management reserves the right to remove anyone who violates the rules.
+                </li>
+
+                <li>
+                    Entry to the event means acceptance of all terms and conditions.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <p class="note">
+
+        💛 Have a question?
+
+        Don't hesitate to reach out to us anytime.
+
+    </p>
+
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <strong>Amaly Summer Night</strong>
+
+    <p>
+        We look forward to welcoming you ✨
+    </p>
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+function setLang(lang){
+
+    document.body.className = 'lang-' + lang;
+
+    document.documentElement.setAttribute(
+        'lang',
+        lang
+    );
+
+    document.documentElement.setAttribute(
+        'dir',
+        lang === 'ar' ? 'rtl' : 'ltr'
+    );
+
+
+    document.querySelectorAll('.block').forEach(function(block){
+
+        block.style.display =
+            block.getAttribute('data-lang') === lang
+            ? ''
+            : 'none';
+
+    });
+
+
+    document
+        .getElementById('btn-en')
+        .classList
+        .toggle(
+            'active',
+            lang === 'en'
+        );
+
+
+    document
+        .getElementById('btn-ar')
+        .classList
+        .toggle(
+            'active',
+            lang === 'ar'
+        );
+
+}
+
+</script>
 
 </body>
 </html>
